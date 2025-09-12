@@ -1,0 +1,5 @@
+name: 'Olivero Dark Switch'
+type: module
+description: 'Proves a dark switch toggle for the Olivero theme and associated CSS to make this work.'
+package: Custom
+core_version_requirement: ^10 || ^11
