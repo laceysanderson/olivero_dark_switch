@@ -1,0 +1,9 @@
+# Custom library for general purposes.
+toggle:
+  js:
+    js/theme-switcher.js: {}
+  css:
+    component:
+      css/toggle-theme.css: {}
+  dependencies:
+    - core/drupalSettings

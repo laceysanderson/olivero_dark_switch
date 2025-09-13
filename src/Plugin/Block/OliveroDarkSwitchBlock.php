@@ -52,11 +52,16 @@ final class OliveroDarkSwitchBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build(): array {
+    $build['#attached']['library'][] = 'olivero_dark_switch/toggle';
+
     $build['content'] = [
       '#type' => 'html_tag',
-      '#tag' => 'button',
+      '#tag' => 'div',
       '#attributes' => [
         'id' => 'theme-switch',
+        'type' => 'button',
+        'data-theme-toggle' => 'light',
+        'aria-label' => 'Change to the dark theme',
       ],
     ];
     $build['content'][] = [

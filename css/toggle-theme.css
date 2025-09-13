@@ -1,0 +1,31 @@
+:root {
+  --color--gray-80: hsl(var(--color--gray-hue), var(--color--gray-saturation), 80%);
+}
+
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--color--gray-90);
+  border-color: var(--color--gray-70);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color var(--tabs-transition-duration);
+}
+#theme-switch:hover {
+  background-color: var(--color--gray-80);
+}
+#theme-switch svg {
+  fill: var(--color--primary-50);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+/* Ensure the hover block edit does not show on this block */
+.block-olivero-dark-switch div.contextual {
+  display: none;
+}
