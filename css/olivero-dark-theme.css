@@ -1,0 +1,48 @@
+/**
+ * @file
+ * This provides a dark theme for Olivero.
+ *
+ * Specifically, we are trying to stay as true to Olivero styling as possible.
+ * To do this we focus on changing the values of the Olivero defined CSS
+ * variables and inverting the gradients where possible.
+ */
+html[data-theme="dark"] {
+
+  /**
+   * Reverse the GRAY scale colors but lower the contrast by padding the
+   * extreme ends. Specifically,
+   * - black is 5% brightness
+   * - the black side of the gradient is shifted 10% lighter.
+   * - white is 90% brightness
+   * - the white side of the gradient is shifted 10% darker.
+   */
+  --color--white: hsl(var(--color--gray-hue), var(--color--gray-saturation), 5%);
+  --color--black: hsl(var(--color--gray-hue), var(--color--gray-saturation), 90%);
+  --color--gray-5: hsl(var(--color--gray-hue), var(--color--gray-saturation), 85%);
+  --color--gray-10: hsl(var(--color--gray-hue), var(--color--gray-saturation), 79%);
+  --color--gray-20: hsl(var(--color--gray-hue), var(--color--gray-saturation), 70%);
+  --color--gray-45: hsl(var(--color--gray-hue), var(--color--gray-saturation), 66%);
+  --color--gray-60: hsl(var(--color--gray-hue), var(--color--gray-saturation), 53%);
+  --color--gray-65: hsl(var(--color--gray-hue), var(--color--gray-saturation), 47%);
+  --color--gray-70: hsl(var(--color--gray-hue), var(--color--gray-saturation), 38%);
+  --color--gray-80: hsl(var(--color--gray-hue), var(--color--gray-saturation), 30%);
+  --color--gray-90: hsl(var(--color--gray-hue), var(--color--gray-saturation), 22%);
+  --color--gray-95: hsl(var(--color--gray-hue), var(--color--gray-saturation), 17%);
+  --color--gray-100: hsl(var(--color--gray-hue), var(--color--gray-saturation), 13%);
+
+  /**
+   * Reverse the PRIMARY color scale by adding the multiplier to the base
+   * lightness rather then substracting the multiplier.
+   * Specifically, the brightness values are (default lightness = 40):
+   * - Primary 30: Dark = 55%; Light = 25%
+   * - Primary 40: Dark=50%; Light=30%
+   * - Primary 50: Dark=40%; Light=40%
+   * - Primary 60: Dark=35%; Light=55%
+   * - Primary 80: Dark=9%; Light=91%
+   */
+  --color--primary-30: hsl(var(--color--primary-hue), var(--color--primary-saturation), calc(1% * (var(--color--primary-lightness) + (0.36 * var(--color--primary-lightness)))));
+  --color--primary-40: hsl(var(--color--primary-hue), var(--color--primary-saturation), calc(1% * (var(--color--primary-lightness) + (0.24 * var(--color--primary-lightness)))));
+  --color--primary-50: hsl(var(--color--primary-hue), var(--color--primary-saturation), calc(1% * var(--color--primary-lightness)));
+  --color--primary-60: hsl(var(--color--primary-hue), var(--color--primary-saturation), calc(1% * (var(--color--primary-lightness) - (0.24 * (100 - var(--color--primary-lightness))))));
+  --color--primary-80: hsl(var(--color--primary-hue), var(--color--primary-saturation), calc(1% * (100 - (var(--color--primary-lightness) + (0.85 * (100 - var(--color--primary-lightness)))))));
+}

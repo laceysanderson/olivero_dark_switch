@@ -5,6 +5,7 @@ toggle:
   css:
     component:
       css/toggle-theme.css: {}
+      css/olivero-dark-theme.css: {}
   dependencies:
     - core/drupal
     - core/once
