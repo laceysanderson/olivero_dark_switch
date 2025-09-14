@@ -1,0 +1,25 @@
+{
+  "name": "tripal/olivero_dark_switch",
+  "type": "drupal-module",
+  "description": "A Drupal extension module which provides dark theme for Olivero and a toggle to change it.",
+  "keywords": ["Drupal"],
+  "homepage": "https://github.com/tripal/olivero_dark_switch",
+  "support": {
+    "issues": "https://github.com/tripal/olivero_dark_switch/issues"
+  },
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Lacey-Anne Sanderson",
+      "homepage": "https://github.com/laceysanderson/",
+      "role": "Lead Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "drupal/core": "^10.4 || ^11.1",
+    "drush/drush": "^13.6",
+    "tripal/tripal": "^4.0-alpha1"
+  }
+}
