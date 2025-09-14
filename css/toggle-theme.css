@@ -7,24 +7,37 @@
   width: 50px;
   padding: 0;
   border-radius: 50%;
-  background-color: var(--color--gray-90);
-  border-color: var(--color--gray-70);
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color var(--tabs-transition-duration);
-}
-#theme-switch:hover {
-  background-color: var(--color--gray-80);
+  cursor: pointer;
 }
 #theme-switch svg {
   fill: var(--color--primary-50);
 }
 
-#theme-switch svg:last-child {
+/* Make the moon show by default */
+#theme-switch svg#theme-switch-sun {
   display: none;
 }
 
+/* Moon should be darker button */
+#theme-switch.moon {
+  background-color: var(--color--gray-90);
+  border-color: var(--color--gray-70);
+}
+#theme-switch.moon:hover {
+  background-color: var(--color--gray-80);
+}
+/* Sun should be lighter button */
+#theme-switch.sun {
+  background-color: var(--color--gray-100);
+  border-color: var(--color--gray-95);
+}
+#theme-switch.sun:hover {
+  background-color: var(--color--gray-95);
+}
 /* Ensure the hover block edit does not show on this block */
 .block-olivero-dark-switch div.contextual {
   display: none;
