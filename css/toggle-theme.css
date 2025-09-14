@@ -1,18 +1,34 @@
+/**
+ * @file
+ * Adds styling to the #theme-switch button.
+ */
+
+/* Define additional CSS variables. */
 :root {
   --color--gray-80: hsl(var(--color--gray-hue), var(--color--gray-saturation), 80%);
 }
 
+/**
+ * Provides a default style for the theme-switch button provided by this module.
+ *
+ * This element is provided by the olivero_dark_switch_block and may be placed
+ * anywhere on the page. While we act like it is a button it is actually a div
+ * to avoid weird button styling that was being applied.
+ *
+ * @see Drupal\olivero_dark_switch\Plugin\Block\OliveroDarkSwitchBlock
+ */
 #theme-switch {
+  display: flex;
   height: 50px;
   width: 50px;
   padding: 0;
   border-radius: 50%;
-  display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color var(--tabs-transition-duration);
   cursor: pointer;
+  transition: background-color var(--tabs-transition-duration);
 }
+
 #theme-switch svg {
   fill: var(--color--primary-50);
 }
@@ -27,17 +43,21 @@
   background-color: var(--color--gray-90);
   border-color: var(--color--gray-70);
 }
+
 #theme-switch.moon:hover {
   background-color: var(--color--gray-80);
 }
+
 /* Sun should be lighter button */
 #theme-switch.sun {
   background-color: var(--color--gray-100);
   border-color: var(--color--gray-95);
 }
+
 #theme-switch.sun:hover {
   background-color: var(--color--gray-95);
 }
+
 /* Ensure the hover block edit does not show on this block */
 .block-olivero-dark-switch div.contextual {
   display: none;
