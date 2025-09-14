@@ -4,7 +4,7 @@ This module will provide a dark switch toggle for the Olivero theme and associat
 
 ## How to use this module
 
-1. First install this module using composer.
+1. First install this module using composer: `composer require tripal/olivero_dark_switch:v1.0.0`
 2. Next place the "Olivero Dark Switch" block in the "Highlighted" region and set the float option to "Right".
 3. Now when you load the main site, there will be a dark theme toggle button.
 
