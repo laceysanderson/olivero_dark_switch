@@ -6,4 +6,5 @@ toggle:
     component:
       css/toggle-theme.css: {}
   dependencies:
-    - core/drupalSettings
+    - core/drupal
+    - core/once
