@@ -10,17 +10,17 @@
  */
 (function (Drupal, once) {
   /**
- * Attaches the theme mode toggle behaviour to the #theme-switch button.
- *
- * @type {Drupal~behavior}
- *
- * @prop {Drupal~behaviorAttach} attach
- *   Adds a click listener to the #theme-switch button that changes between
- *   light and dark mode when clicked. See the file docblock for the specifics
- *   of how each action that entails.
- */
+   * Attaches the theme mode toggle behaviour to the #theme-switch button.
+   *
+   * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Adds a click listener to the #theme-switch button that changes between
+   *   light and dark mode when clicked. See the file docblock for the specifics
+   *   of how each action that entails.
+   */
   Drupal.behaviors.toliveroDarkSwitchThemeModeToggle = {
-    attach(context) {
+    attach(context, drupalSettings) {
 
       // 1. Grab what we need from the DOM and system settings on page load.
       const button = document.querySelector("[data-theme-toggle]");
@@ -34,7 +34,10 @@
       updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
       updateThemeOnHtmlEl({ theme: currentThemeSetting });
 
-      // 4. Add an event listener to toggle the theme.
+      // 4. Apply the configuration settings.
+      button.style.float = drupalSettings.oliveroDarkSwitch.float;
+
+      // 5. Add an event listener to toggle the theme.
       button.addEventListener("click", (event) => {
         const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 

@@ -2,6 +2,6 @@ block.settings.olivero_dark_switch_block:
   type: block_settings
   label: 'Olivero Dark Switch block'
   mapping:
-    example:
+    float:
       type: string
-      label: Example
+      label: Float

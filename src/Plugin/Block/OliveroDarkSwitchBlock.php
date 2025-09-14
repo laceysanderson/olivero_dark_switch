@@ -25,7 +25,7 @@ final class OliveroDarkSwitchBlock extends BlockBase {
    */
   public function defaultConfiguration(): array {
     return [
-      'example' => $this->t('Hello world!'),
+      'float' => $this->t('Right'),
     ];
   }
 
@@ -33,11 +33,19 @@ final class OliveroDarkSwitchBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state): array {
-    $form['example'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Example'),
-      '#default_value' => $this->configuration['example'],
+
+    $form['float'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Float'),
+      '#description' => $this->t('Impacts the styling of the toggle button.'),
+      '#options' => [
+        'none' => $this->t('None'),
+        'left' => $this->t('Left'),
+        'right' => $this->t('Right'),
+      ],
+      '#default_value' => $this->configuration['float'],
     ];
+
     return $form;
   }
 
@@ -45,7 +53,7 @@ final class OliveroDarkSwitchBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state): void {
-    $this->configuration['example'] = $form_state->getValue('example');
+    $this->configuration['float'] = $form_state->getValue('float');
   }
 
   /**
@@ -53,6 +61,7 @@ final class OliveroDarkSwitchBlock extends BlockBase {
    */
   public function build(): array {
     $build['#attached']['library'][] = 'olivero_dark_switch/toggle';
+    $build['#attached']['drupalSettings']['oliveroDarkSwitch']['float'] = $this->configuration['float'];
 
     $build['content'] = [
       '#type' => 'html_tag',
